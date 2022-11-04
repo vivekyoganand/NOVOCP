@@ -1,0 +1,50 @@
+Cluster
+====
+ oc get nodes
+   75  history 
+   76  
+   77  oc get nodes
+   78  oc version
+   79  oc adm node-logs worker-2.vyoganan.lab.psi.pnq2.redhat.com
+   80  oc adm node-logs worker-2.vyoganan.lab.psi.pnq2.redhat.com | grep -i error | tail -n 10
+   81  oc get nodes
+   82  oc debug node/worker-2.vyoganan.lab.psi.pnq2.redhat.com
+   83  oc get nodes
+   84 
+   85  oc get nodes
+   86  
+   87  oc get nodes
+   88  oc adm node-logs worker-2.vyoganan.lab.psi.pnq2.redhat.com| grep -i error | tail -n 5
+   89  
+   90  oc get nodes
+   91  history 
+
+
+Inside the worker node
+===
+1  oc
+    2  systemctl status kubelet
+    3  systemctl start kubelet
+    4  sudo systemctl start kubelet
+    5  systemctl status kubelet
+    6  exit
+    7  curl -vvv -k  https://registry.redhat.io
+    8  curl -vvv -k  https://hub.docker.com
+    9  systemctl status kubelet
+   10  systemctl start kubelet
+   11  sudo systemctl start kubelet
+   12  systemctl status kubelet
+   13  systemctl status crio
+   14  exit
+   15  systemctl stop crio
+   16  sudo systemctl stop crio
+   17  exit
+   18  journalctl -x crio
+   19  journalctl -x 
+   20  journalctl -xe --no-pager | grep -i error
+   21  journalctl -xe --no-pager | grep -i crio
+   22  journalctl -xe --no-pager | grep -i shut
+   23  journalctl -xe --no-pager | grep -i kubelet
+   24  sudo systemctl start crio
+   25  exit
+   26  history 
