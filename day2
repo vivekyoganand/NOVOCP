@@ -1,0 +1,48 @@
+270  oc project openshift-network-operator
+  271  oc get pods
+  272  oc get pods -A | grep -i sdn
+  273  oc get co
+  274  oc get clusteroperator
+  275  oc get co
+  276  oc get pods -A | grep -i sdn
+  277  oc get pv
+  278  oc get pvc
+  279  oc get pvc -A
+  280  oc get pv -A
+  281  oc get sc
+  282  oc get storageclass
+  
+  286  oc get nodes
+  287  oc new-project kubeapi
+  288  oc whoami --show-server
+  289  curl -kv https://api.vyoganan.lab.psi.pnq2.redhat.com:6443
+  290  oc get co
+  291 
+  292  oc get co
+  293  #kube-apiserver
+  294  oc project openshift-kube-apiserver
+  295  oc get pods
+  296  oc get no
+  297  oc describe pod/kube-apiserver-guard-master-0.vyoganan.lab.psi.pnq2.redhat.com
+  298  oc get evetns
+  299  oc get events
+  300  oc get pods
+  301  oc logs pod/kube-apiserver-guard-master-0.vyoganan.lab.psi.pnq2.redhat.com | grep -i error
+  302  oc logs pod/kube-apiserver-guard-master-0.vyoganan.lab.psi.pnq2.redhat.com | grep -i fail
+  303  oc logs pod/kube-apiserver-guard-master-0.vyoganan.lab.psi.pnq2.redhat.com | grep -i war
+  304  oc logs pod/kube-apiserver-guard-master-0.vyoganan.lab.psi.pnq2.redhat.com | grep -i mess
+  305  oc logs pod/kube-apiserver-guard-master-0.vyoganan.lab.psi.pnq2.redhat.com 
+  306 
+  309  oc get node
+  310  oc get co
+  311 
+  312  oc get co
+  313  history 
+  314  oc get co
+  315  oc project openshift-kube-apiserver
+  316  oc get pods
+  317  oc project openshift-apiserver-opertor
+  318  oc project openshift-apiserver-operator
+  319  oc get pods
+  320  history 
+[quicklab@upi-0 ~]$ 
