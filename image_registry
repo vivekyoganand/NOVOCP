@@ -1,0 +1,18 @@
+383  skopeo inspect >
+  384  skopeo inspect docker://registry.access.redhat.com/rhscl/postgresql-96-rhel7:1
+  385  ssh -i ~/.ssh/quicklab.key -o "UserKnownHostsFile /dev/null" -o "StrictHostKeyChecking no" -o "IdentitiesOnly=yes" quicklab@master-0.vyoganan.lab.psi.pnq2.redhat.com
+  386  oc get storageclass
+  387  history 
+oc set volumes deployment/hello-deploy  
+
+--add --name example-storage 
+
+--type pvc --claim-class standard 
+
+--claim-mode rwo 
+
+--claim-size 100Mi 
+
+--mount-path /var/lib/example-app 
+
+--claim-name example-storage
