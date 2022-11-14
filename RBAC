@@ -1,0 +1,99 @@
+$ oc adm policy who-can <verb> <resource>
+
+Indicates which users can perform an action on a resource.
+
+$ oc adm policy add-role-to-user <role> <username>
+
+Binds a specified role to specified users in the current project.
+
+$ oc adm policy remove-role-from-user <role> <username>
+
+Removes a given role from specified users in the current project.
+
+$ oc adm policy remove-user <username>
+
+Removes specified users and all of their roles in the current project.
+
+$ oc adm policy add-role-to-group <role> <groupname>
+
+Binds a given role to specified groups in the current project.
+
+$ oc adm policy remove-role-from-group <role> <groupname>
+
+Removes a given role from specified groups in the current project.
+
+$ oc adm policy remove-group <groupname>
+
+Removes specified groups and all of their roles in the current project.
+
+
+ oc adm policy [flags]
+
+Discover:
+  who-can                        List who can perform the specified action on a resource
+  scc-subject-review             Check whether a user or a service account can create a pod
+  scc-review                     Check which service account can create a pod
+
+Manage project membership:
+  remove-user                    Remove user from the project
+  remove-group                   Remove group from the project
+
+Assign roles to users and groups:
+  add-role-to-user               Add a role to users or service accounts for the current project
+  add-role-to-group              Add a role to groups for the project
+  remove-role-from-user          Remove a role from users for the project
+  remove-role-from-group         Remove a role from groups for the project
+
+Assign cluster roles to users and groups:
+  add-cluster-role-to-user       Add a role to users for all projects in the cluster
+  add-cluster-role-to-group      Add a role to groups for all projects in the cluster
+  remove-cluster-role-from-user  Remove a role from users for all projects in the cluster
+  remove-cluster-role-from-group Remove a role from groups for all projects in the cluster
+
+Manage policy on pods and containers:
+  add-scc-to-user                Add a security context constraint to users or a service account
+  add-scc-to-group               Add a security context constraint to groups
+  remove-scc-from-user           Remove a user from a security context constraint
+  remove-scc-from-group          Remove a group from a security context constraint
+
+Use "oc adm policy <command> --help" for more information about a given command.
+Use "oc adm options" for a list of global command-line options (applies to all commands).
+
+
+oc get nodes
+  563  oc get users
+  564  oc get identity
+  565  oc adm policy --help
+  566  oc get users
+  567  oc adm policy add-cluster-role-to-user --help
+  568  oc adm policy add-cluster-role-to-user cluster-role developer
+  569  oc get user
+  570  oc adm policy add-cluster-role-to-user cluster-admin developer
+  571  oc adm policy remove-cluster-role-from-user cluster-admin developer
+  572  oc adm policy who-can delete developer
+  573  oc adm policy who-can delete user
+  574  oc adm policy who-can delete system:admin
+  575  oc get user
+  576  oc get project
+  577  oc adm policy who-can delete default
+  578  oc adm policy add-cluster-role-to-user cluster-role developer
+  579  oc adm policy who-can delete developer
+  580  oc adm policy add-role-to-user --help
+  581  oc adm policy add-role-to-user view developer
+  582  oc adm policy who-can delete developer
+  583  oc whomai
+  584  oc whoami
+  585  oc projects
+  586  oc adm policy who-can --help
+  587  oc adm policy who-can view openshift-ingress
+  588  oc describe clusterrole.rbac
+  589   oc describe rolebinding.rbac -n default
+  590  oc get users
+  591  oc get project
+  592  test
+  593  oc adm policy add-role-to-user --help
+  594  oc adm policy add-role-to-user view jobs -n test
+  595  history 
+  596  oc adm policy --help
+  597  history 
+[quicklab@upi-0 ~]$ 
