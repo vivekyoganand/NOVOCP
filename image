@@ -1,0 +1,63 @@
+ 603  oc whomai
+  604  oc whoami
+  605  oc create secret --help
+  606  oc create secret tls --help
+  607  oc create secret generic demo-secret --from-literal user=demo-user --from-literal root_password=zT1KTgk
+  608  oc get secret
+  609  oc describe secret demo-secret
+  610  oc get cm
+  611  oc describe secret demo-secret
+  612  oc create secret generic demo-secret --from-literal user=demo-user --from-literal root_password=zT1KTgk
+  6
+  614  oc whoami
+  615  oc get cm
+  616  oc describe cm openshift-service-ca.crt
+  617  oc new-project authorization-secrets
+  618  oc project
+  619  oc create secret generic mysql --from-literal user=myuser --from-literal password=redhat123 --from-literal database=test_secrets --from-literal hostname=mysql
+  620  oc new-app --name mysql --docker-image registry.access.redhat.com/rhscl/mysql-57-rhel7:5.7-47
+  621  oc get pods -w
+  622  oc set env deployment/mysql --from secret/mysql --prefix MYSQL_
+  623  oc get pods
+  624  oc get secrets
+  625  oc rsh mysql-647848cc6c-x77ww
+  626  ping quay.io
+  627  oc get scc
+  628  oc describe scc anyuid
+  629  oc get pods -n openshift-console
+  630  oc describe pod/console-5dfd59d44d-phfpk -n openshift-console | grep -i scc
+  631  oc create scc
+  632  oc logs pod/console-5dfd59d44d-phfpk -n openshift-console | tail -n 10
+  633  oc adm policy --help
+  634  oc new-project authorization-scc
+  635  oc new-app --name gitlab >
+  636  --docker-image gitlab/gitlab-ce:8.4.3-ce.0
+  637  oc new-app --name gitlab --docker-image gitlab/gitlab-ce:8.4.3-ce.0
+  638  oc new-app --name gitlab --docker-image gitlab/gitlab-ce:latest
+  639  oc new-app --name gitlab --docker-image gitlab
+  640* oc new-app --name gitlab --docker-image h
+  641  oc new-app --name gitlab httpd
+  642  oc new-app --name gitlab gitlab
+  643  oc get pods
+  644  docker 
+  645  podman
+  646  sudo yum install docker -y
+  647  sudo systemctl start docker 
+  648  docker ps
+  649  sudo docker ps
+  650  docker search gitlab
+  651  sudo docker search gitlab
+  652  oc new-app --name gitlab --docker-image registry.access.redhat.com/rhmap42/gitlab-shell
+  653  oc get pods
+  654  oc new-app --name gitlabxyz --docker-image registry.access.redhat.com/rhmap42/gitlab-shell
+  655  oc get pods
+  656  oc new-app --name gitlababv --docker-image gitlab/gitlab-ce:8.4.3-ce.0
+  657  oc new-app --name gitlababv --docker-image gitlab/gitlab-ce:8.4.3-ce.0 --allow-missing-images
+  658  oc get pods
+  659  oc describe pod/gitlababv-76487588d8-nr6kn
+  660  oc get pods
+  661  sudo docker search gitlab
+  662  sudo docker login
+  663  sudo docker search gitlab
+  664  env
+  665  history 
