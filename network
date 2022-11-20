@@ -1,0 +1,131 @@
+  703  ls -l
+  704  cat kubeconfig
+  705  oc get no -o wide
+  706  oc get pods -A
+  707  oc get pods -A -n nsvivek
+  708  oc get pods -o wide -n nsvivek
+  709  oc get nodes
+  710  oc get nodes -o wide
+  711  oc get svc
+  712  oc expose --help
+  713  oc describe dns.operator/default
+  714  oc get co
+  715  oc whoami --show-server
+  716  oc get network/cluster -o yaml
+  717  oc get pods -o wide
+  718  oc get nods -o wide
+  719  oc get nodes -o wide
+  720  oc get co
+  721  oc project openshift-network
+  722  oc project openshift-network-operator
+  723  oc ge tpods
+  724  oc get pods
+  725  oc get pods -A | grep -i Multus
+  726  oc get pods -A | grep -i mysql
+  727  oc get svc
+  728  oc get svc --all-namespaces
+  729  oc get route
+  730  oc get route cluster -o yaml
+  731  history 
+  732  oc get route/cluster -o yaml
+  733  cd
+  734  oc project xyz
+  735  oc get all
+  736  oc create ns nov
+  737  oc new-app --name nov httpd -n nov
+  738  oc get pods -n nov
+  739  oc get svc -n nov
+  740  oc get route -n nov
+  741  oc expose  svc nov -n nov
+  742  oc get route -n nov
+  743  history 
+  744  oc get route -n nov -o yaml
+  745  oc get route -n nov -o yaml >> route.yaml
+  746  vi route.yaml 
+  747  oc get pods
+  748  oc get pods -n nov
+  749  oc rsh nov-d8689767f-zpq9t /bin/bash
+  750  oc rsh nov-d8689767f-zpq9t /bin/bash -n nov
+  751  oc rsh pod/nov-d8689767f-zpq9t /bin/bash -n nov
+  752  oc rsh pod/nov-d8689767f-zpq9t  -n nov
+  753  oc rsh nov-d8689767f-zpq9t -n nov
+  754  oc get pods -n nov
+  755  oc rsh pod/nov-d8689767f-zpq9t -n nov
+  756  oc project nov
+  757  oc get pods
+  758  oc rsh nov-d8689767f-zpq9t
+  759  vi simple_route.yaml
+  760  oc create -f simple_route.yaml 
+  761  oc get pods -A | grep -i golang-http
+  762  oc get svc | grep -i golang
+  763  oc get route | grep -i golang
+  764  oc expose svc golang-http 
+  765  oc get route | grep -i golang
+  766  openssl genrsa -out key.key
+  767  ls -ltr
+  768  cat key.key
+  769  openssl req -new -key key.key -out csr.csr -subject "/CN=golang-http-nov.apps.vyoganan.lab.psi.pnq2.redhat.com"
+  770  openssl req -new -key key.key -out csr.csr -subj "/CN=golang-http-nov.apps.vyoganan.lab.psi.pnq2.redhat.com"
+  771  vi edge.yaml
+  772  oc create -f edge.yaml 
+  773  oc get pods
+  774  oc get svc
+  775  oc create route edge --service golang-https --hostname golang-http-nov.apps.vyoganan.lab.psi.pnq2.redhat.com --key key.key --cert csr.csr 
+  776  oc get route
+  777  hostname
+  778  oc delete route/golang-https
+  779  oc get route
+  780  oc create route edge --service golang-https --hostname golang-https-nov.apps.vyoganan.lab.psi.pnq2.redhat.com --key key.key --cert csr.csr 
+  781  oc get route
+  782  vi reencrypt.yaml
+  783  oc get dc
+  784  vi reencrypt.yaml
+  785  oc create -f reencrypt.yaml 
+  786  oc get deploy
+  787  oc get dc
+  788  oc delete dc/golang-http dc/golang-https
+  789  oc get dc
+  790  oc get pods
+  791  oc get svc
+  792  oc delete svc golang-http golang-https
+  793  oc get svc
+  794  oc get route
+  795  oc create -f reencrypt.yaml 
+  796  oc get pods
+  797  vi reencrypt.yaml
+  798  oc delete svc golang-https
+  799  oc create -f reencrypt.yaml 
+  800  cat reencrypt.yaml 
+  801  oc explain DeploymentConfig
+  802  vi reencrypt.yaml
+  803  oc create ns reencrypt
+  804  oc create reencrypt.yaml -n reencrypt
+  805  oc create -f reencrypt.yaml -n reencrypt
+  806  vi reencrypt.yaml
+  807  oc create -f reencrypt.yaml -n reencrypt
+  808  oc get all -n reencrypt
+  809  oc get svc -n reencrypt
+  810  oc project reencrypt
+  811  #oc create route reencrypt --service golang-https 
+  812  hostname
+  813  oc create route reencrypt --service golang-https --hostname golang-https.vyoganan.lab.psi.pnq2.redhat.com --key key.key --cert csr.csr --dest-ca-cert=destca.crt
+  814  openssl x509 -x509toreq -in csr.csr -signkey key.key -out destca.crt
+  815  ls -ltr
+  816  openssl req -newkey rsa:2048 -nodes -keyout domain.key -x509 -days 365 -out destca.crt
+  817  ls -ltr
+  818  oc create route reencrypt --service golang-https --hostname golang-https.vyoganan.lab.psi.pnq2.redhat.com --key key.key --cert csr.csr --dest-ca-cert=destca.crt
+  819  oc get route
+  820  eee
+  821  oc create ns passthrough
+  822  vi passthrough.yaml
+  823  vimdiff reencrypt.yaml passthrough.yaml 
+  824  oc extract secrets/router-ca >
+  825  --keys tls.crt -n openshift-ingress-operator
+  826  oc extract secrets/router-ca  --keys tls.crt -n openshift-ingress-operator
+  827  cat tls.crt 
+  828  oc get oc | grep -i openshift-ingress-operator
+  829  oc get co | grep -i openshift-ingress-operator
+  830  oc get co | grep -i ingress
+  831  oc project openshift-ingress-operator
+  832  oc get pods
+  833  history 
