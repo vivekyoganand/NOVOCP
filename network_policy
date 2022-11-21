@@ -1,0 +1,89 @@
+ 674  oc get ingresscontroller -n openshift-ingress-operator
+  675  oc get ingresscontroller -n openshift-ingress-operator -o yaml
+  676  oc get secrets -n openshift-ingress
+  677  oc get secrets/router-certs-default -n openshift-ingress -o yaml 
+  678  oc get secret router-certs-default -o json -n openshift-ingress | jq -r '.data."tls.crt"' | base64 -d | openssl x509 -text -noout
+  679  oc get cm -n openshift-config
+  680  oc extract --help
+  681  oc extract configmap/custom-ca --to=/tmp
+  682  oc extract configmap/custom-ca --to=/tmp -n openshift-config
+  683  cat /tmp/ca-bundle.crt
+  684  history 
+  685  oc get secret router-certs-default -o yaml > router-certs-default.yaml
+  686  oc ge tndoes
+  687  oc get ndoes
+  688  oc get nodes
+  689  oc get secret router-certs-default -o json -n openshift-ingress | jq -r '.data."tls.crt"' | base64 -d | openssl x509 -text -noout
+  690  oc whoami --show-server
+  691  oc get nodes
+  692  ifconfig 
+  693  oc get nodes
+  694  oc login --token=sha256~H4l-QKxBxIrhtKJegYQku4AK-RurKjVWqwf3nTyggCs --server=https://api.vyoganan.lab.psi.pnq2.redhat.com:6443
+  695  oc create ns network-1
+  696  oc create ns network-2
+  697  oc new-project network-policy
+  698  oc new-app --name hello heelo-world
+  699  oc new-app --name hello hello-world
+  700  oc new-app --name hello httpd
+  701  oc new-app --name test httpd
+  702  oc get pods
+  703  oc expose svc hello
+  704  oc get evc
+  705  oc get svc
+  706  oc rsh hello-89dff6c4-nfxhw
+  707  oc get pods
+  708  oc rsh test-67bb9df678-wtsxz
+  709  oc get pods -o wide
+  710  oc rsh test-67bb9df678-wtsxz curl 10.131.0.251 | grep Hello
+  711  oc rsh hello-89dff6c4-nfxhw curl 10.131.0.251 | grep Hello
+  712  oc rsh hello-89dff6c4-nfxhw curl 10.131.0.221 | grep Hello
+  713  oc rsh hello-89dff6c4-nfxhw curl 10.131.0.252 | grep Hello
+  714  oc expose svc test
+  715  oc get svc -o wide
+  716  oc get pods -o wide
+  717  oc get svc -o wide
+  718  oc rsh test-67bb9df678-wtsxz
+  719  oc get pods, svc
+  720  oc get pods,svc
+  721  oc new-project network-test
+  722  oc new-app --name sample-app httpd
+  723  history 
+  724  oc get pods,svc -n network-policy
+  725  oc get pods,svc network-test
+  726  oc get pods,svc -n network-test
+  727  oc rsh pod/sample-app-644c6b5854-fmdpg
+  728  oc get pods,svc -o wide -n network-policy
+  729  oc get pods,svc -n network-test
+  730  oc rsh pod/sample-app-644c6b5854-fmdpg
+  731  vi deny-all.yaml
+  732  oc create -f deny-all.yaml 
+  733  vi deny-all.yaml
+  734  oc create -f deny-all.yaml 
+  735  history 
+  736  oc get pods,svc -o wide -n network-policy
+  737  oc get pods,svc -n network-test
+  738  oc rsh pod/test-67bb9df678-wtsxz
+  739  oc rsh pod/hello-89dff6c4-nfxhw
+  740  oc rsh pod/hello-89dff6c4-nfxhw -n network-policy
+  741  oc get pods -n network-policy
+  742  oc get pods -o wide-n network-policy 
+  743  oc get pods -o wide -n network-policy 
+  744  oc rsh test-67bb9df678-wtsxz
+  745  vi allow-nw.yaml
+  746  vi allow-ingress.yaml
+  747  oc create -f allow-ingress.yaml 
+  748  oc get pods -o wide-n network-policy 
+  749  oc get pods -o wide -n network-policy 
+  750  oc rsh test-67bb9df678-wtsxz
+  751  oc describe test-67bb9df678-wtsxz 
+  752  oc describe pod/test-67bb9df678-wtsxz -n network-policy
+  753  oc get pods
+  754  oc logs pod/sample-app-644c6b5854-fmdpg
+  755  ls -ltr
+  756  cat allow-nw.yaml
+  757  oc get all -n network-policy
+  758  oc create -f allow-nw.yaml
+  759  oc rsh pod/hello-89dff6c4-nfxhw
+  760  oc rsh pod/hello-89dff6c4-nfxhw -n network-policy
+  761  oc adm pod-network join-projects --to=network-policy network-test
+  762  oc adm pod-network make-projects-global network-policy network-test
