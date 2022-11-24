@@ -1,0 +1,58 @@
+969  oc get nodes
+  970  oc get nodes --show-labels 
+  971  oc label --list node/worker-2.vyoganan.lab.psi.pnq2.redhat.com
+  972  oc label --list node/worker-1.vyoganan.lab.psi.pnq2.redhat.com
+  973  oc label node/worker-2.vyoganan.lab.psi.pnq2.redhat.com easy=openshift
+  974  oc label --list node/worker-2.vyoganan.lab.psi.pnq2.redhat.com
+  975  oc label node/worker-2.vyoganan.lab.psi.pnq2.redhat.com easy=kubernetes --overwrite
+  976  oc label --list node/worker-2.vyoganan.lab.psi.pnq2.redhat.com
+  977  oc label node/worker-2.vyoganan.lab.psi.pnq2.redhat.com easy-
+  978  oc label --list node/worker-2.vyoganan.lab.psi.pnq2.redhat.com
+  979  oc get node -L app
+  980  oc get node -L app -L easy
+  981  oc get node -L app -L easy -L owner
+  982  oc get machines -n openshift-machine-api -o wide
+  983  oc get ns
+  984  oc get ns | grep  -i machines
+  985  oc get ns | grep  -i machine
+  986  oc project openshift-machine-api
+  987  oc get all
+  988  oc get ms
+  989  oc get machineset
+  990  oc get nodes --show-labels 
+  991  oc new-project nodeselect
+  992  oc new-app --name nodeselect httpd
+  993  oc get all
+  994  oc edit deployment/nodeselect 
+  995  oc get pods 
+  996  oc get pods -o wide
+  997  oc get nodes --show-labels 
+  998  oc label node/worker-2.vyoganan.lab.psi.pnq2.redhat.com app=dev
+  999  oc get nodes --show-labels 
+ 1000  oc describe node/worker-2.vyoganan.lab.psi.pnq2.redhat.com  | grep -i taint
+ 1001  oc describe node/worker-1.vyoganan.lab.psi.pnq2.redhat.com  | grep -i taint
+ 1002  oc get pods
+ 1003  oc adm taint node/worker-1.vyoganan.lab.psi.pnq2.redhat.com app=Prod:NoSchedule-
+ 1004  oc adm taint node worker-1.vyoganan.lab.psi.pnq2.redhat.com app=Prod:NoSchedule-
+ 1005  oc get pods
+ 1006  oc get pods -o wide
+ 1007  oc get nodes --show-labels 
+ 1008  oc adm new-project demo --node-selector "app=dev"
+ 1009  oc new-app --name demo httpd
+ 1010  oc get pods -o wide
+ 1011  oc edit deployment/demo
+ 1012  oc get pods -o wide
+ 1013  oc project demo
+ 1014  oc get pods
+ 1015  oc new-app --name test httpd
+ 1016  oc get pods -o wide
+ 1017  history 
+ 1018  oc get nodes --show-labels 
+ 1019  oc adm new-project sakthiman --node-selector "owner=sakthiman"
+ 1020  oc project sakthiman
+ 1021  oc new-app httpd
+ 1022  oc get pods -o wide
+ 1023  oc scale --replicas 3 deployment/httpd
+ 1024  oc get pods
+ 1025  oc get pods -o wide
+ 1026  history 
