@@ -1,0 +1,77 @@
+1001  oc get no
+ 1002  oc whoami --show-console
+ 1003  oc whoami --show-server
+ 1004  oc get deploy
+ 1005  oc get dc
+ 1006  oc describe dc/httpd-yoga -n xyz
+ 1007  oc describe dc/httpd-yoga -n xyz -o yaml >> http_yoga.yaml
+ 1008  oc gt dc/httpd-yoga -n xyz -o yaml >> http_yoga.yaml
+ 1009  oc get dc/httpd-yoga -n xyz -o yaml >> http_yoga.yaml
+ 1010  vim http_yoga.yaml 
+ 1011  oc new-app --name resource httpd --as-deployment-config 
+ 1012  oc get deploy
+ 1013  oc get dc
+ 1014  oc get pods
+ 1015  oc get dc/resource  -n xyz -o yaml >> resource.yaml
+ 1016  vim resource.yaml 
+ 1017  oc get pods
+ 1018  oc describe pods/resource-1-7m55t
+ 1019  oc get pods
+ 1020  oc get dc/resource  -n xyz -o yaml > resource.yaml
+ 1021  vim resource.yaml 
+ 1022  oc set resources dc/resource --requests cpu=10m,memory=20Mi --limits cpu=80m,memory=100Mi
+ 1023  oc get pods
+ 1024  oc describe pod/resource-2-wzllx
+ 1025  oc get pods
+ 1026  oc get dc
+ 1027* oc get no --show-labels
+ 1028  oc adm top nodes/worker-2.vyoganan.lab.psi.pnq2.redhat.com
+ 1029  oc adm top nodes
+ 1030  oc adm top nodes -l node-role.kubernetes.io/worker
+ 1031  oc adm top nodes -l node-role.kubernetes.io/master
+ 1032  oc get pods
+ 1033  oc get nodes
+ 1034  oc describe node/worker-0.vyoganan.lab.psi.pnq2.redhat.com
+ 1035  vi dev-quota.yaml
+ 1036  oc create --save-config -f dev-quota.yml
+ 1037  oc create --save-config -f dev-quota.yaml 
+ 1038  vi dev-quota.yaml
+ 1039  oc create --save-config -f dev-quota.yaml 
+ 1040  oc get resourcequotas 
+ 1041  oc create --help
+ 1042  oc describe quota
+ 1043  oc get resourcequotas 
+ 1044  oc get quota
+ 1045  oc new-project vivek
+ 1046  oc get ns | grep -i vivek
+ 1047  oc create ns yoganand
+ 1048  oc get ns -n vivek
+ 1049  oc get ns 
+ 1050  oc project
+ 1051  oc get pods
+ 1052  oc get ns
+ 1053  oc get project
+ 1054  oc get project --help
+ 1055  oc get project -L
+ 1056  oc get project -L env
+ 1057  oc label project/xyz env=prod
+ 1058  oc new-project schedule-limit
+ 1059  oc create deployment hello-limit httpd --dry-run=client -o yaml > hello-limit.yaml
+ 1060  oc new-app --name hello-limit httpd --dry-run=client -o yaml > hello-limit.yaml
+ 1061  oc new-app --name hello-limit httpd -o yaml > hello-limit.yaml
+ 1062  ls -ltr
+ 1063  vim hello-limit.yaml 
+ 1064  oc get pods
+ 1065  oc apply -f hello-limit.yaml 
+ 1066  oc get all
+ 1067  oc describe pod/hello-limit-5c4bd88df8-mt9d2
+ 1068  vim hello-limit.yaml 
+ 1069  oc replace -f hello-limit.yaml 
+ 1070  oc get all
+ 1071  oc get pods
+ 1072  oc describe pod/hello-limit-5c4bd88df8-mt9d2
+ 1073  oc get pods
+ 1074  oc describe pod/hello-limit-6f76bc7969-rgpch
+ 1075  oc get pods
+ 1076  oc get events --field-selector type=Warning
+ 1077  history 
